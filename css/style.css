@@ -74,7 +74,7 @@ p {
 
 /* Header */
 header {
-    background-image: url("/img/header.jpg");   /* header obrazok na cely viewpoort */
+    background-image: url("img/header.jpg");   /* header obrazok na cely viewpoort */
     height: 100vh;
     background-position: center;
     background-size: cover;
