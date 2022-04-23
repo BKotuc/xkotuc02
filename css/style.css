@@ -1,0 +1,590 @@
+/*  Meno:   Branislav Kotúč
+ *  xlogin: xkotuc02 
+*/
+
+
+/* Misc */
+* {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    color: yellow;
+    background-color: darkred;
+}
+
+body {
+    background-color: rgba(255, 247, 142, 0.404);
+    font-family: Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: darkred;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: yellow;
+}
+
+.content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    margin: 60px 0px 80px 0px;  /* odsadenie sekcii */
+}
+
+h1 {
+    font-size: 52px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 42px;
+    color: darkred;
+}
+
+h3 {
+    text-align: center;
+    font-size: 32px;
+    color: darkred;
+}
+
+h4 {
+    text-align: center;
+    font-size: 22px;
+    color: darkred;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Header */
+header {
+    background-image: url("/img/header.jpg");   /* header obrazok na cely viewpoort */
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+#header-title {  /* nadpis pod navbarom */
+    position: absolute;
+    top: 5%;
+}
+
+#header-title a h1 {
+    color: yellow;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    padding-left: 20px;
+}
+
+#header-title a:visited h1 {
+    color: yellow;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    padding-left: 20px;
+}
+
+header .content {           
+    display: flex;
+    justify-content: center;
+}
+
+/* Navbar */
+#main-nav ul {                  /* zarovnanie navbaru do stredu */
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#main-nav a {
+    padding: 10px;
+    color: yellow;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.5s ease;
+    white-space: nowrap;
+}
+
+#main-nav a:hover {
+    background-color: yellow;
+    border-radius: 5px;
+    color: darkred;
+}
+
+#main-nav li {
+    padding: 10px;
+    float: left;
+}
+
+#main-nav {
+    background-color: darkred;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+}
+
+.dropdown {                 
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown-content {  /* display none na dropdown sekcie family, pets and toys */
+    display: none;
+    position: absolute;
+    top: 42px;
+    background-color: darkred;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    /* float: none; */
+    color: yellow;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {  /* dropdown list sa zobrazi az po hover/kliku mysi */
+    display: block;
+}
+
+/* About */
+#about .content {               
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-content {                /* zarovnanie contentu v sekcii about na + sirka 85%*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 85%;
+}
+
+#about img {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    border: darkred solid 2px;
+    box-shadow: 0 0 10px 0 darkred;
+    min-width: 100px;
+}
+
+/* Accomplishments */
+#accomplishments {
+    border-top: 2px darkred dashed;
+}
+
+#accomplishments .content {     /* zarovnanie contentu na stred */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accomplishments-content {      /* zarovnanie contentu v accomplishment sekcii na stred + sirka 85% */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 85%;
+}
+
+.acc-item {                     /* zarovnanie veci v kartickach na stred + styl */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid darkred;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 black;
+}
+
+.acc-item img {
+    max-width: 80%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.acc-item:hover {
+    box-shadow: 0 0 8px 0 darkred;
+    border: 1px solid darkred;
+    background-color: darkred;
+    color: yellow;
+}
+
+.acc-item h3 {
+    margin: 0px;
+    padding: 20px;
+    font-size: 22px;
+    color: black;
+}
+
+.acc-item:hover h3 {
+    color: yellow;
+}
+
+.acc-item p {
+    margin: 0px;
+    padding: 20px;
+}
+
+/* Talents */
+#talents {
+    border-top: 2px darkred dashed;
+}
+
+#talents .content{              /* zarovnanie talent contentu na stred a sirka 85% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+}
+
+#talents .talents-content {     /* grid pre obrazky 2 vedla seba */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 40px;
+    justify-content: center;
+}
+
+.talents-card {
+    position: relative;
+    width: 100%
+}
+
+.image-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.image-overlay {            /* zo zaciatku skryty overlay na obrazky, zobrazi sa ak hover */
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(139, 0, 0, 0.6);
+    color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+    border-radius: 5px;
+}
+
+.image-overlay-blur {
+    backdrop-filter: blur(5px);
+}
+
+.image-overlay > * {                /* priprava animacie na nadpis a text, ktory je v overlay */
+    transform: translateY(20px);
+    transition: transform 0.25s
+}
+
+.image-overlay:hover {          /* zobrazenie overlayu na obrazku */
+    opacity: 1;
+}
+
+.image-overlay:hover > * {          /* animacia na nadpis a text, ktory je v overlay */
+    transform: translateY(0px);
+}
+
+.image-title {
+    font-size: 2em;
+    padding: 0.5em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color: yellow;
+}
+
+.image-description {
+    margin-top: 0.25em;
+    padding: 1em;
+    text-align: left;
+}
+
+/* Family, pets and toys */
+#familyskip {
+    visibility: hidden;
+}
+
+#family-petstoys {              
+    border-top: 2px darkred dashed;
+}
+
+#family-petstoys .content {     /* sirka contentu family petstoys na 85% */
+    width: 85%;
+}
+
+#family-petstoys h3 {
+    text-decoration: underline;
+}
+
+.family-item {              /* zarovnanie family na stred */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 2.5em;
+}
+
+.family-item img {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    border: darkred solid 2px;
+    box-shadow: 0 0 10px 0 darkred;
+    min-width: 100px;
+}
+
+#family-content h3 {
+    margin-top: 0px;
+}
+
+#petstoys-content {         /* zarovnanie petstoys contentu na stred */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+#petstoys-content img {
+    width: 50%;
+    height: 50%;
+}
+
+.petstoys-item:nth-child(odd) {     /* zarovnanie neparnych itemov na stred a flex row aby obrazky boli na pravo */
+    display: flex;
+    gap: 5em;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.petstoys-item:nth-child(odd) img {
+    border-radius: 50%;
+    transition: all ease-out 0.25s;
+}
+
+.petstoys-item:nth-child(odd) img:hover {
+    border-radius: 5%;
+    transition: all ease-in 0.25s;
+    box-shadow: 0px 0px 15px 0px darkred;
+}
+
+.petstoys-item:nth-child(even) {    /* zarovnanie neparnych itemov na stred a flex row aby obrazky boli na lavo */
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.petstoys-item:nth-child(even) img {
+    border-radius: 50%;
+    transition: all ease-out 0.25s;
+}
+
+.petstoys-item:nth-child(even) img:hover {
+    border-radius: 5%;
+    transition: all ease-in 0.25s;
+    box-shadow: 0px 0px 15px 0px darkred;
+}
+
+.reveal {       /* trieda na fade in reveal animacie */
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.active.fade-left {        /* fade animacia zlava */
+    animation: fade-left 1s;
+}
+
+.active.fade-right {        /* fade animacia zprava */
+    animation: fade-right 1s;
+}
+
+@keyframes fade-left {          /* keyframes na animeciu fade */
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Footer */
+.footer-content {       /* zarovnanie footeru aby boli medzery okolo */
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    
+}
+
+footer {
+    background-color: black;
+    color: rgba(255, 255, 0, 0.8);
+    font-size: 14px;
+    padding: 2em 2em;
+}
+
+footer .content{        /* sirka kontentu na 85% */
+    width: 85%;
+    padding: 0px;
+}
+
+footer img {
+    width: 2em;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer a {
+    align-self: center;
+    padding-left: 50px;
+}
+
+/* Responsive design*/
+
+@media screen and (max-width: 735px) {
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .acc-item h3 {
+        font-size: 22px;
+        padding-bottom: 0px;
+    }
+
+    .acc-item img {
+        max-width: 100%;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 5px;
+    }
+
+    .acc-item {
+        align-items: stretch;
+    }
+
+    .image-title {
+        font-size: 22px;
+    }
+
+    .image-description {
+        font-size: 18px;
+    }
+
+    #main-nav a {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    #main-nav li {
+        padding: 5px;
+    }
+
+    .dropdown-content {
+        top: 28px;
+    }
+
+    .acc-item {
+        flex-direction: column;     /* zmena obsahu karticiek v sekcii accomplishments na column */
+    }
+
+    #talents .talents-content {         /* grid s obrazkamy talents su pod sebou */
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    #main-nav a {
+        font-size: 8px;
+    }
+
+    .acc-item h3 {
+        font-size: 18px;
+    }
+
+    .image-title {
+        font-size: 18px;
+    }
+
+    .image-description {
+        font-size: 14px;
+    }
+}
